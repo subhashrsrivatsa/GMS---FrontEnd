@@ -5,7 +5,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import ListProductComponent from './components/ListProductComponent';
 import HeaderComponent from './components/HeaderComponent';
 import FooterComponent from './components/FooterComponent';
-import CreateProduct from './components/CreateProduct';
+import CreateProduct from './components/CreateProductComponent';
 
 function App() {
   return (
