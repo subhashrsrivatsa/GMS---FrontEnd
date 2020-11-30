@@ -1,11 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
 import ListProductComponent from './components/ListProductComponent';
+import HeaderComponent from './components/HeaderComponent';
+import FooterComponent from './components/FooterComponent';
 
 function App() {
   return (
-    <div className="App">
-     <ListProductComponent />
+    <div>
+      <HeaderComponent />
+        <div className="container">
+          <ListProductComponent />
+        </div>
+      <FooterComponent />
     </div>
   );
 }
