@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ProductService from '../services/ProductService';
 
 class ListProductComponent extends Component {
     constructor(props){
@@ -7,6 +8,15 @@ class ListProductComponent extends Component {
             products:[]
         }
     }
+
+
+    componentDidMount(){
+        ProductService.getProducts().then((res) =>{
+            this.setState({products: res.data});
+        });
+    }
+
+
     render() {
         return (
             <div>
