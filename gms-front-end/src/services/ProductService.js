@@ -12,6 +12,15 @@ class ProductService {
         return axios.post(PRODUCT_API_BASE_URL, product);
     }
 
+    getProductById(productId){
+        return axios.get(PRODUCT_API_BASE_URL + '/' + productId);
+    }
+
+    updateProduct(product, productId){
+        return axios.put(PRODUCT_API_BASE_URL + '/' + productId, product);
+    }
+
 }
+
 
 export default new ProductService()

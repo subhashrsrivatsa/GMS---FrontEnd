@@ -9,6 +9,23 @@ class ListProductComponent extends Component {
         }
 
         this.addProduct = this.addProduct.bind(this);
+        this.editProduct = this.editProduct.bind(this);
+        this.deleteProduct = this.deleteProduct.bind(this);
+    }
+
+
+    addProduct(){
+        this.props.history.push('add-product');
+    }
+
+    deleteProduct(id){
+        ProductService.deleteProduct(id).then( res => {
+            this.setState({products: this.state.products.filter(employee => product.id != id)});
+        });
+    }
+
+    editProduct(id){
+        this.props.history.push(`/update-product/${id}`);
     }
 
 
@@ -17,11 +34,6 @@ class ListProductComponent extends Component {
             this.setState({products: res.data});
         });
     }
-
-    addProduct(){
-        this.props.history.push('add-product');
-    }
-
 
     render() {
         return (
@@ -50,7 +62,12 @@ class ListProductComponent extends Component {
                                    <tr key={product.id}>
                                        <td>{product.productName}</td>
                                        <td>{product.productCategory}</td>
-                                       <td>{product.productQuantity}</td>                                       
+                                       <td>{product.productQuantity}</td>    
+                                       <td>
+                                            <button onClick = { () => this.editProduct(product.id)} className="btn btn-warning">Update</button>
+                                            <button style={{marginLeft:"10px"}} onClick = { () => this.deleteProduct(product.id)} className="btn btn-danger">Delete</button>
+                                            <button style={{marginLeft:"10px"}} onClick = { () => this.viewProduct(product.id)} className="btn btn-info">View Info</button>
+                                        </td>                                   
                                    </tr>
                                )
                            }

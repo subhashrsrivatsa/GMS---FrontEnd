@@ -5,7 +5,8 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import ListProductComponent from './components/ListProductComponent';
 import HeaderComponent from './components/HeaderComponent';
 import FooterComponent from './components/FooterComponent';
-import CreateProduct from './components/CreateProductComponent';
+import CreateProductComponent from './components/CreateProductComponent';
+import UpdateProductComponent from './components/UpdateProductComponent';
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
             <Switch>
               <Route path ="/" exact component = {ListProductComponent}></Route>
               <Route path ="/products" component = {ListProductComponent}></Route>
-              <Route path ="/add-product" exact component = {CreateProduct}></Route>
+              <Route path ="/add-product" exact component = {CreateProductComponent}></Route>
+              <Route path ="/update-product/:id" exact component = {UpdateProductComponent}></Route>
             </Switch>     
           </div>
         <FooterComponent />
