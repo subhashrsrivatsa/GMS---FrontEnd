@@ -20,7 +20,7 @@ class ListProductComponent extends Component {
 
     deleteProduct(id){
         ProductService.deleteProduct(id).then( res => {
-            this.setState({products: this.state.products.filter(employee => product.id != id)});
+            this.setState({products: this.state.products.filter(product => product.id != id)});
         });
     }
 
