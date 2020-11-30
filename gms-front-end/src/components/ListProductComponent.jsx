@@ -7,6 +7,8 @@ class ListProductComponent extends Component {
         this.state={
             products:[]
         }
+
+        this.addProduct = this.addProduct.bind(this);
     }
 
 
@@ -16,12 +18,20 @@ class ListProductComponent extends Component {
         });
     }
 
+    addProduct(){
+        this.props.history.push('add-product');
+    }
+
 
     render() {
         return (
             <div>
                <h2 className="text-center">Products List</h2>
                <br/>
+               <div className ="row">
+                    <button className="btn btn-primary" onClick={this.addProduct}>Add Product</button>
+                </div>
+                <br/>
                <div className="row">
                    <table className="table table-striped table-bordered">
                        <thead>
