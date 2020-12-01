@@ -28,6 +28,10 @@ class ListProductComponent extends Component {
         this.props.history.push(`/update-product/${id}`);
     }
 
+    viewProduct(id){
+        this.props.history.push(`/view-product/${id}`);
+    }
+
 
     componentDidMount(){
         ProductService.getProducts().then((res) =>{
